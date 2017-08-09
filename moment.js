@@ -1,11 +1,12 @@
 var moment = require('moment');
 var express = require('express');
 
-function timeStamp(req, res, next) {
-    var timestamp = moment().format();
-    req.body.timestamp = timestamp;
+function createTimeStamp(req, res, next) {
+
+     req.body.timeStamp = moment().format();
+   
         next();
     
 }
 
-module.exports = timeStamp;
+module.exports = createTimeStamp;
