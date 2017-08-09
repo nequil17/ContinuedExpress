@@ -6,7 +6,8 @@ var app = express();
 var path = require('path');
 var jsonPath = path.join(__dirname, 'data.json');
 
-app.use('/api', api)
 app.use(bodyParser.json());
+app.use('/api', api)
+
 
 app.listen(3000);
