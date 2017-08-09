@@ -6,4 +6,4 @@ function generateID(req, res, next){
     next(); 
 }
 
-module.exports = generateID;
+module.exports = assignId;
