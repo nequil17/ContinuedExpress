@@ -18,7 +18,6 @@ router.route('/')
             res.write(file);
             res.end();
     })
-
 }) 
 .post(time, ids.generateId, function(req, res) {
         fs.readFile(jsonPath, 'utf-8', function(err, file) {
@@ -30,6 +29,7 @@ router.route('/')
                 data = req.body;
                 // data.id = ids.generate();
                 arr.push(data);
+                console.log(req.body);
 
         fs.writeFile(jsonPath, JSON.stringify(arr), function(err, success) {
             if (err) {
@@ -39,10 +39,9 @@ router.route('/')
                 res.writeHead(201, 'Created');
                 res.end(JSON.stringify(arr));
                 }
-            });
+            })
         } 
     });
-
 });
 
 router.route('/one/:id')
@@ -124,5 +123,3 @@ router.route('/one/:id')
     });
 
 module.exports = router;
-
-
